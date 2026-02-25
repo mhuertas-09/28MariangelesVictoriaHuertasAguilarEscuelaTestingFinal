@@ -2,19 +2,26 @@
 
 ## Descripción del Proyecto
 
-Proyecto de automatización de pruebas API utilizando Karate Framework sobre la API pública Swagger Petstore.
+Este proyecto consiste en la automatización de pruebas API utilizando Karate Framework sobre la API pública de Swagger Petstore.
+La automatización valida el correcto funcionamiento de los endpoints de los módulos Store y User, verificando:
 
-Se automatizaron los módulos:
+- Códigos de respuesta HTTP
 
-- Store
-- User
+- Estructura del cuerpo de respuesta (JSON)
 
-Incluye:
+- Datos esperados en escenarios positivos y negativos
 
-- Casos Happy Path
-- Casos Unhappy Path
+- Manejo adecuado de errores
+
+Se implementaron:
+
+- Casos Happy Path (flujo exitoso)
+
+- Casos Unhappy Path (validaciones negativas)
+
 - Ejecución por tags
-- Configuración centralizada con karate-config.js
+
+- Configuración centralizada mediante karate-config.js
 
 ---
 
@@ -47,6 +54,14 @@ Incluye:
 ## Ejecutar solo User
 
 - mvn test -Dkarate.options="--tags @user"
+
+## Ejecutar solo User Happy Path
+
+- mvn test -Dkarate.options="--tags @user --tags @happy"
+
+## Ejecutar solo User Unhappy Path
+
+- mvn test -Dkarate.options="--tags @user --tags @unhappy"
 
 ## REPORTES
 
